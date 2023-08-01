@@ -22,7 +22,14 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    //import ở các component sẽ ngắn gọn hơn
+    
+    "paths": {
+      "@env": ["src/environments/environment"],
+      "@shared/*": ["src/app/shared/*"],
+      "@cores/*": ["src/app/core/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
