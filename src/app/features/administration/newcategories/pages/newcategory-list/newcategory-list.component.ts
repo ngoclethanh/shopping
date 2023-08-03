@@ -29,7 +29,7 @@ export class NewcategoryListComponent extends BaseComponent implements OnInit {
     //sssssssss
    }
   ngOnInit(): void {
- 
+  ////////////////////////sádasd
     this.fileNameExcel = 'loai-tin-tuc.xlsx';
   }
 
