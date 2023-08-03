@@ -26,11 +26,13 @@ export class NewcategoryListComponent extends BaseComponent implements OnInit {
     setTimeout(() => {
      this.search();
     }, 0);
+    //sssssssss
    }
   ngOnInit(): void {
  
     this.fileNameExcel = 'loai-tin-tuc.xlsx';
   }
+
 
 }
 
