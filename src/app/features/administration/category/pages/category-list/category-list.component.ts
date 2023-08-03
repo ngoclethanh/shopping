@@ -40,5 +40,8 @@ export class CategoryListComponent extends BaseComponent implements OnInit {
      }
     this.search();
    }
+   checkout(){
+    
+   }
 
 }
