@@ -28,10 +28,15 @@ export class BaseService implements BaseData {
     const newParam: any = cleanDataTable(params);
 
     return this.http
-      .get<DataTable>(`${this.baseUrl}/Paging`, {
+      .get<DataTable>(`${this.baseUrl}`, {
         params: { ...newParam },
       })
-      .pipe(map((data) => mapDataTable(data, params)));
+      // .pipe(map((data) => mapDataTable(data, params)));
+  }
+  getLength() {
+    return this.http
+      .get<any>(`${this.baseUrl}`)
+
   }
 
   findByCode(code: string): Observable<any> {

@@ -52,30 +52,22 @@
     <ng-template pTemplate="header">
       <tr>
         <th>STT</th>
-        <th>Mã lớp</th>
-        <th>Tên lớp</th>
-
-        <th>Giáo viên chủ nhiệm</th>
-
-        <th>Trạng thái</th>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
         <th style="width: 100px" alignFrozen="right" pFrozenColumn>Action</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-item let-i="rowIndex">
       <tr>
         <td>{{ i + 1 }}</td>
-        <td>{{ item.classCode }}</td>
-        <td>{{ item.className }}</td>
-        <td>{{ item.teacherName }}</td>
-        <td>
-          <p-inputSwitch [readonly]="true" [(ngModel)]="item.status"></p-inputSwitch>
-        </td>
+        <td>{{item.code}}</td>
+        <td>{{ item.name }}</td>
         <td style="width: 100px" alignFrozen="right" pFrozenColumn>
          
-          <span class="pointer p-mr-2" (click)="viewEdit(item.classId)">
+          <span class="pointer p-mr-2" (click)="viewEdit(item.id)">
             <em class="las la-pen"></em>
           </span>
-          <span class="pointer" (click)="deleteItem(item.classId)">
+          <span class="pointer" (click)="deleteItem(item.id)">
             <em class="las la-trash-alt"></em>
           </span>
         </td>
