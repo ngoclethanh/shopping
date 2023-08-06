@@ -6,3 +6,9 @@
 @import 'layout';
 @import 'theme/index';
 @import 'custom';
+
+.errors {
+    .error-message {
+        color: #f44336
+    }
+}

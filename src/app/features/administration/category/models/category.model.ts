@@ -1,11 +1,8 @@
 export interface CategoryModel {
-    classId?: string;
-    className?: string;
+    id?: string;
+    name?: string | null;
     classCode?: string;
     startDate?: string;
-    endDate?: string;
-    teacherId?: string;
-    teacherName?: string;
-    status?: string;
-    searchName?:string;
+    code?: string | null;
+
 }

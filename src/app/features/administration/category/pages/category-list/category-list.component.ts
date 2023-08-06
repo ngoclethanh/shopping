@@ -14,10 +14,8 @@ export class CategoryListComponent extends BaseComponent implements OnInit {
     super(inject,service);
   }
    override params: CategoryModel = {
-    className: '',
-    teacherId: '',
-    status: '',
-    searchName:''
+    name: null,
+    code:null
   }
   ngOnInit(): void {
     if (!this.stateData) {
@@ -33,10 +31,8 @@ export class CategoryListComponent extends BaseComponent implements OnInit {
  
   onReset(){
      this.params={
-      className: '',
-      teacherId: '',
-      status: '',
-      searchName:''
+      name: null,
+      code:null
      }
     this.search();
    }
