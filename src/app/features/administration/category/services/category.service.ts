@@ -9,7 +9,7 @@ import { environment } from 'src/enviroment/enviroment';
 export class CategoryService extends BaseService{
 
   constructor(http:HttpClient) {
-    super(http,`${environment.endpoint_url}/classes`);
+    super(http,`${environment.endpoint_url}/category`);
   }
  
   // getTeacher() {

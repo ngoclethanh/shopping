@@ -95,9 +95,9 @@ export function removeParamSearch(params: any) {
 }
 export function mapDataTable(data: any, params: any) {
   return <DataTable>{
-    content: data?.data || [],
-    currentPage: params?.pageIndex || 1,
-    size: params?.pageSize || 10,
+    content: data || [],
+    currentPage: params?._page || 1,
+    size: params?._limit || 10,
     totalElements: data?.totalRecords || 0,
     totalPages: data.totalPages,
   };

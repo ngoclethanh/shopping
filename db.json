@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "category": [
+    {
+      "id": 1,
+      "code":"0001",
+      "name":"giày công sở"
+    },
+    {
+      "id": 2,
+      "code":"0002",
+      "name":"giày thể thao"
+    }
+  ]
+}

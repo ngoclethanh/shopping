@@ -15,4 +15,4 @@ import { CategoryRoutingModule } from './category-routing.module';
     CategoryRoutingModule
   ]
 })
-export class ClassesModule { }
+export class CategoryModule { }

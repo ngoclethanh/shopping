@@ -94,11 +94,11 @@ export class BaseComponent implements OnDestroy {
     });
   }
   getLength() {
-    // this.service.getLength().subscribe({
-    //   next: (value) => {
-    //     this.length = value.length | 0;
-    //   },
-    // })
+    this.service.getLength().subscribe({
+      next: (value) => {
+        this.length = value.length | 0;
+      },
+    })
   }
 
   mapState() { }

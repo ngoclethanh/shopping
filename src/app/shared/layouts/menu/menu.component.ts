@@ -97,17 +97,17 @@ export class AppMenuComponent implements OnInit {
           {
             id: uuIdv4(),
             path: '[4]',
-            label: 'Quản lý lớp học',
+            label: 'Quản lý danh mục',
             icon: 'pi-sign-in',
-            routerLink: '/admin/administration/class',
+            routerLink: '/admin/administration/category',
             active: false,
           },
           {
             id: uuIdv4(),
             path: '[4]',
-            label: 'Quản lý loại khóa học',
+            label: 'Quản lý sản phẩm',
             icon: 'pi-sign-in',
-            routerLink: '/admin/administration/course-category/',
+            routerLink: '/admin/administration/product',
             active: false,
           },
           {
