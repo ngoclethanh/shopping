@@ -46,7 +46,7 @@ export class BaseComponent implements OnDestroy {
     totalElements: 1,
     totalPages: 0,
     totalRecords: 0,
-    size: 0
+    size: 10
   };
   configAction: ActionConfig | undefined;
   prevParams: any;
@@ -172,14 +172,16 @@ export class BaseComponent implements OnDestroy {
 
   }
   create() {
-    this.service.create(this.model).subscribe({
-      next: () => {
-        this.closeForm();
-        this.messageService?.success('Thao tác thành công');
-        this.search();
-        this.getLength();
-      },
-    })
+    if (this.form.valid) {
+      this.service.create(this.model).subscribe({
+        next: () => {
+          this.closeForm();
+          this.messageService?.success('Thao tác thành công');
+          this.search();
+          this.getLength();
+        },
+      })
+    }
   }
   closeForm() {
     this.form?.resetForm();
@@ -188,6 +190,7 @@ export class BaseComponent implements OnDestroy {
   }
 
   update() {
+   if (this.form.valid) {
     this.service.update(this.model.id!, this.model).subscribe({
       next: () => {
         this.messageService?.success('Thao tác thành công');
@@ -195,6 +198,7 @@ export class BaseComponent implements OnDestroy {
         this.search();
       },
     })
+   }
   }
 
   delete(id: number) {

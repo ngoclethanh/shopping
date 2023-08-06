@@ -19,13 +19,31 @@
   "category": [
     {
       "id": 1,
-      "code":"0001",
-      "name":"giày công sở"
+      "code": "0001",
+      "name": "giày công sở"
     },
     {
       "id": 2,
-      "code":"0002",
-      "name":"giày thể thao"
+      "code": "0002",
+      "name": "giày thể thao"
+    },
+    {
+      "code": null,
+      "name": null,
+      "id": 3
+    },
+    {
+      "code": "0003",
+      "name": "giày cao",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "code": "0004",
+      "name": "00004",
+      "id": 6
     }
   ]
 }
