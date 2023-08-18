@@ -2,8 +2,43 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "code": "pr-01",
+      "name": "json-server",
+      "quantity": 400,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "price": 3000000,
+      "status": true,
+      "des": ""
+    },
+    {
+      "id": 2,
+      "code": "pr-02",
+      "name": "json-server 1",
+      "quantity": 400,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "price": 3000000,
+      "status": true,
+      "des": ""
     }
   ],
   "comments": [
@@ -20,7 +55,7 @@
     {
       "id": 1,
       "code": "0001",
-      "name": "giày công sở"
+      "name": "giày công sở 1"
     },
     {
       "id": 2,
@@ -28,22 +63,19 @@
       "name": "giày thể thao"
     },
     {
-      "code": null,
-      "name": null,
-      "id": 3
-    },
-    {
       "code": "0003",
       "name": "giày cao",
       "id": 4
     },
     {
-      "id": 5
-    },
-    {
       "code": "0004",
       "name": "00004",
       "id": 6
+    },
+    {
+      "code": "0005",
+      "name": "ngoc",
+      "id": 7
     }
   ]
 }

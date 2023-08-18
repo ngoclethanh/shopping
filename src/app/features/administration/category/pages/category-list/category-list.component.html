@@ -65,11 +65,12 @@
         <td>{{ item.name }}</td>
         <td style="width: 100px" alignFrozen="right" pFrozenColumn>
 
-          <span class="pointer p-mr-2" (click)="viewEdit(item.id)">
-            <em class="las la-pen"></em>
+          <span class="pointer mr-2" (click)="viewEdit(item)" data-toggle="modal"
+          data-target="#exampleModal">
+             <i class="pi pi-pencil"></i>
           </span>
           <span class="pointer" (click)="deleteItem(item.id)">
-            <em class="las la-trash-alt"></em>
+            <i class="pi pi-trash"></i>
           </span>
         </td>
       </tr>
@@ -100,9 +101,17 @@
             <div class="col-6">
               <div class="p-field">
                 <span class="p-float-label">
-                  <input type="tex" class="p-inputtext-sm" pInputText [(ngModel)]="model.code" name="code" required #code="ngModel" />
+                  <input type="tex" class="p-inputtext-sm" pInputText [(ngModel)]="model.code" name="code" required #code="ngModel" [disabled]="isEdit" (input)="checkDuplicate()" />
                   <label for="inputtext">Mã sản phẩm*</label>
                 </span>
+                <div class="errors-group">
+                  <small class="error-message" *ngIf="code.errors?.['required'] && (code?.dirty || code?.touched || form?.submitted)">
+                    This field is required
+                  </small>
+                  <small class="error-message" *ngIf="duplicate">
+                    Duplicated code
+                  </small>
+                </div>
               </div>
             </div>
 

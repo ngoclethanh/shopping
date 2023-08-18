@@ -57,6 +57,9 @@ export class BaseComponent implements OnDestroy {
   length: number = 0;
   key: string = '';
   model: any = {};
+  list:any = [];
+  duplicate = false;
+  isEdit = false;
   @ViewChild('form', { static: false }) form!: NgForm;
   @ViewChild('modal', { static: false }) modal!: ElementRef;
 
@@ -97,10 +100,14 @@ export class BaseComponent implements OnDestroy {
     this.service.getLength().subscribe({
       next: (value) => {
         this.length = value.length | 0;
+        this.list = value;
+
       },
     })
   }
-
+  checkDuplicate(){
+    this.duplicate = this.list.find((x:any)=> x.code ===this.model.code)?.id > 0;
+   }
   mapState() { }
 
   search(firstPage?: boolean) {
@@ -139,6 +146,7 @@ export class BaseComponent implements OnDestroy {
     this.search();
   }
   viewEdit(item: any) {
+    this.isEdit = true;
     this.model = JSON.parse(JSON.stringify(item));
   }
 
@@ -163,6 +171,7 @@ export class BaseComponent implements OnDestroy {
     });
   }
   save() {
+   
     if (this.model.id !== undefined) {
       this.update();
     } else {
@@ -172,7 +181,7 @@ export class BaseComponent implements OnDestroy {
 
   }
   create() {
-    if (this.form.valid) {
+    if (this.form.valid && !this.duplicate) {
       this.service.create(this.model).subscribe({
         next: () => {
           this.closeForm();
@@ -184,6 +193,7 @@ export class BaseComponent implements OnDestroy {
     }
   }
   closeForm() {
+    this.isEdit = false;
     this.form?.resetForm();
     this.form?.reset();
     this.modal.nativeElement.querySelector('button.close').click();
@@ -193,9 +203,11 @@ export class BaseComponent implements OnDestroy {
    if (this.form.valid) {
     this.service.update(this.model.id!, this.model).subscribe({
       next: () => {
+        this.isEdit = false;
         this.messageService?.success('Thao tác thành công');
         this.closeForm();
         this.search();
+
       },
     })
    }
