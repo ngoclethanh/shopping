@@ -27,5 +27,9 @@ export class LoginService  extends BaseService {
     removeSesionStorage('admin');
     this.adminLogin.next(null!);
   }
+  test(){
+    const ngoc ="ngoc dz"
+    return ngoc;
+  }
   
 }
